@@ -1,4 +1,4 @@
 import base from '../base';
 
-export const cart = base('USCART');
-export const checkout = base('USCHECKOUT');
+export const cart = base('cart');
+export const checkout = base('checkout');

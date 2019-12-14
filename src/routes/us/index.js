@@ -4,7 +4,7 @@ const router = Router();
 
 router.get('/cart', async (req, res) => {
   try {
-    const form = await req.context.models.cart.find().sort({ _id: -1 }).limit(1);
+    const form = await req.context.models.cart.find();
 
     if (!form || (form && !form.length)) {
       return res.send([]);
