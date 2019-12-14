@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import express from 'express';
 // import { Webhook } from 'webhook-discord';
 
-import models, { connectDb } from './models';
+import { US, connectDb } from './models';
 import routes from './routes';
 // import Task from './task';
 
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(async (req, res, next) => {
   req.context = {
-    models,
+    US,
   };
   next();
 });

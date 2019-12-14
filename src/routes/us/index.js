@@ -4,10 +4,10 @@ const router = Router();
 
 router.get('/cart', async (req, res) => {
   try {
-    const form = await req.context.models.cart.find();
+    const form = await req.context.US.cart.find().sort({ _id: -1 }).limit(1);
 
     if (!form || (form && !form.length)) {
-      return res.send([]);
+      return res.send([]).status(404);
     }
   
     const formData = form[0];
@@ -20,10 +20,10 @@ router.get('/cart', async (req, res) => {
 
 router.get('/checkout', async (req, res) => {
   try {
-    const form = await req.context.models.checkout.find().sort({ _id: -1 }).limit(1);
+    const form = await req.context.US.checkout.find().sort({ _id: -1 }).limit(1);
 
     if (!form || (form && !form.length)) {
-      return res.send([]);
+      return res.send([]).status(404);
     }
   
     const formData = form[0];

@@ -1,4 +1,11 @@
-import base from '../base';
+import mongoose from 'mongoose';
 
-export const cart = base('cart');
-export const checkout = base('checkout');
+const useSchema = new mongoose.Schema({
+  data: {
+    type: Array,
+    required: true,
+  },
+});
+
+export const cart = mongoose.model('carts', useSchema);
+export const checkout = mongoose.model('checkouts', useSchema);

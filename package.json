@@ -1,7 +1,7 @@
 {
   "name": "supreme-toolkit",
   "version": "1.0.0",
-  "description": "A simple rest api to fetch and parse supreme's checkout form and serve it",
+  "description": "A simple rest api to fetch and parse supreme",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",

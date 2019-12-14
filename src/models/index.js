@@ -9,4 +9,9 @@ export const connectDb = () => {
     return mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 };
 
-export default { cart, checkout };
+const US = {
+    cart,
+    checkout,
+};
+
+export { US };
